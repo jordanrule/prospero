@@ -3,7 +3,7 @@
 Prospero is a collection of tutorials for applying machine learning and optimization to enterprise operations.  The intent is enable researchers to run a production-ready reference model on [Google Cloud AI](https://cloud.google.com/ai-platform) with [MLFlow](https://mlflow.org/) tracking in under five minutes.
 
 In development:
-* [Reinforcement Learning for Pricing](https://raw.githubusercontent.com/jordanrule/prospero/pricing/)
+* [Reinforcement Learning for Pricing](https://github.com/jordanrule/prospero/tree/master/pricing)
 
 All credit to the authors of:
 * [Caliban](https://github.com/google/caliban) for Google Cloud AI production tooling
@@ -34,7 +34,7 @@ caliban cloud run --experiment_config experiment.json --xgroup pricing_tutorial 
 ### Dramatic Epilogue
 
 <p>
-<img style="float: right;" align="right" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/William_Hamilton_Prospero_and_Ariel.jpg" width="350">
+<img style="float: right;" align="right" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/William_Hamilton_Prospero_and_Ariel.jpg" width="280">
 
 > “Our revels now are ended. These our actors, \
 > As I foretold you, were all spirits, and \

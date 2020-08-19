@@ -1,4 +1,4 @@
-# Reinforcement Learning in Pricing
+# Reinforcement Learning for Pricing
 
 Approximate plan:
 * For [reasons](https://sjmielke.com/jax-purify.htm) I would like to start with the Trax [PolicyTrainer](https://github.com/google/trax/blob/master/trax/rl/training.py#L244) reference implementation
