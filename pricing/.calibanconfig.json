@@ -1,0 +1,10 @@
+{
+  "apt_packages" : ["openssh-client", "curl"],
+  "mlflow_config" : {"project": "prospero",
+             "region": "us-central1",
+             "db": "mlflow",
+             "user": "postgres",
+             "password": "mlflow",
+             "artifact_root": "gs://prospero/mlflow",
+             "debug" : false}
+}
