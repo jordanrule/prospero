@@ -18,17 +18,19 @@ All credit to the authors of:
 pip install caliban
 ```
 
+To run Caliban, you will first need [service account credentials](https://caliban.readthedocs.io/en/latest/cloud/service_account.html) on [Google Cloud services](https://caliban.readthedocs.io/en/latest/getting_started/cloud.html).  Save the provided credentials as `service_key.json`.
+
 Train a pricing model on your local machine:
 
 ```bash
 git clone https://github.com/jordanrule/prospero.git && cd pricing/
-caliban run --experiment_config experiment.json --xgroup pricing_tutorial --nogpu pricing.py
+caliban run --cloud_key service_key.json --experiment_config experiment.json  --nogpu pricing.py
 ```
 
-Train a pricing model on [Google Cloud](https://caliban.readthedocs.io/en/latest/getting_started/cloud.html):
+Train a pricing model on Google Cloud with MLFlow:
 
 ```bash
-caliban cloud run --experiment_config experiment.json --xgroup pricing_tutorial --nogpu pricing.py
+caliban cloud run --cloud_key service_key.json --experiment_config experiment.json --xgroup pricing_tutorial --nogpu pricing.py
 ```
 
 ### Dramatic Epilogue
