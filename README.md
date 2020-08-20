@@ -18,20 +18,29 @@ All credit to the authors of:
 pip install caliban
 ```
 
-To run Caliban, you will first need [service account credentials](https://caliban.readthedocs.io/en/latest/cloud/service_account.html) on [Google Cloud services](https://caliban.readthedocs.io/en/latest/getting_started/cloud.html).  Save the provided credentials as `service_key.json`.
+To run Caliban, you will first need [service account credentials](https://caliban.readthedocs.io/en/latest/cloud/service_account.html) on [Google Cloud services](https://caliban.readthedocs.io/en/latest/getting_started/cloud.html).  Save the provided credentials as `~/.config/gcloud/service_key.json` and `export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/service_key.json`.
 
 Train a pricing model on your local machine:
 
 ```bash
 git clone https://github.com/jordanrule/prospero.git && cd pricing/
-caliban run --cloud_key service_key.json --experiment_config experiment.json  --nogpu pricing.py
+caliban run --experiment_config experiment.json  --nogpu pricing.py
 ```
 
-Train a pricing model on Google Cloud with MLFlow:
+Train a pricing model on a Google Cloud GPU with MLFlow:
 
 ```bash
-caliban cloud run --cloud_key service_key.json --experiment_config experiment.json --xgroup pricing_tutorial --nogpu pricing.py
+caliban cloud --experiment_config experiment.json --xgroup pricing_tutorial --nogpu pricing.py
 ```
+
+## Contributing
+
+The vision of Prospero is that models contained should:
+* Easily deploy on Google Cloud for immediate integration and iteration
+* Purify stateful code (see [here](https://sjmielke.com/jax-purify.htm) or [here](https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html))
+* Solve a business problem
+
+If that sounds like something you would be interested in helping guide, reach out to Jordan in the #ai-ml channel of [Docker Slack](https://www.docker.com/docker-community).
 
 ### Dramatic Epilogue
 
