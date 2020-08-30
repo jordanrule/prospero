@@ -3,7 +3,7 @@
 Prospero is a collection of tutorials for applying machine learning and optimization to enterprise operations.  The intent is enable researchers to run a production-ready reference model on [Google Cloud AI](https://cloud.google.com/ai-platform) with [MLFlow](https://mlflow.org/) tracking in under five minutes.
 
 In development:
-* [Reinforcement Learning for Pricing](https://github.com/jordanrule/prospero/tree/master/pricing)
+* [Reinforcement Learning for Pricing](https://github.com/jordanrule/prospero/tree/main/pricing)
 
 All credit to the authors of:
 * [Caliban](https://github.com/google/caliban) for Google Cloud AI production tooling
@@ -18,7 +18,11 @@ All credit to the authors of:
 pip install caliban
 ```
 
-To run Caliban, you will first need [service account credentials](https://caliban.readthedocs.io/en/latest/cloud/service_account.html) on [Google Cloud services](https://caliban.readthedocs.io/en/latest/getting_started/cloud.html).  Save the provided credentials as `~/.config/gcloud/service_key.json` and `export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/service_key.json`.
+To run Caliban, you will need the [Google Cloud SDK](https://cloud.google.com/sdk/) installed to login:
+
+```bash
+gcloud auth login
+```
 
 Train a pricing model on your local machine:
 
@@ -27,10 +31,10 @@ git clone https://github.com/jordanrule/prospero.git && cd pricing/
 caliban run --experiment_config experiment.json  --nogpu pricing.py
 ```
 
-Train a pricing model on a Google Cloud GPU with MLFlow:
+Train a pricing model on a Google Cloud GPU:
 
 ```bash
-caliban cloud --experiment_config experiment.json --xgroup pricing_tutorial --nogpu pricing.py
+caliban cloud --experiment_config experiment.json pricing.py
 ```
 
 ## Contributing

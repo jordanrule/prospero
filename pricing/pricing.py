@@ -210,6 +210,7 @@ def main(_):
     trainer.run(2)
 
     print("Average returns: %s" % trainer.avg_returns)
+    print()
 
 
 if __name__ == '__main__':
